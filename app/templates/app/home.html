@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido%}
+
+<section class="container">
+    <div class="row">
+        <section class="post col-md-9">
+            <div class="miga-de-pan">
+                <ol class="breadcrumb">
+                    <li><a href="#">Inicio</a></li>
+                    <li class="active">Noticias</li>
+                </ol>
+            </div>
+
+            <!--aqui va el ARTICULO 1  -->	
+
+            <article class="post clearfix">
+                <a href="#" class="thumb pull-left">
+                    <img class="img-thumbnail" src="{% static 'app/img\img 1.jpg' %}" alt="">
+                </a>
+                <h2 class="post-tittle">
+                    <a href="#">¿Por qué no comprar cualquier procesador?</a>
+                </h2>
+                <p><span class="post-fecha">14 de Septiembre de 2020</span> por <span class="post-autor"><a href="#">Elsa Capuntas</a></span></p>
+                <p class="post-contenido text-justify">
+                    Es lo primero que debes tener en cuenta antes de decantarte por un procesador concreto, ya que no es lo mismo montar un PC que vas a utilizar para jugar a títulos actuales que uno dedicado a ofimática, a contenidos multimedia o a aplicaciones exigentes que puedan aprovechar un alto grado de paralelizado (muchos núcleos e hilos). Por eso hacemos énfasis en que pienses primero el uso que le darás a tu procesador y no malgastar. 
+                </p>
+
+                <div class="contenedor-botones">
+                    <a href="#" class="btn btn-primary">Leer Más</a>
+                    <a href="#" class="btn btn-success"> Comentarios <span class="badge">13</span></a>
+                </div>
+            </article>
+
+            <!--aqui va el ARTICULO 2  -->
+
+            <article class="post clearfix">
+                <a href="#" class="thumb pull-left">
+                    <img class="img-thumbnail" src="{% static 'app/img\img 2.jpg' %}" alt="">
+                </a>
+                <h2 class="post-tittle">
+                    <a href="#">Indies V/S Triple A</a>
+                </h2>
+                <p><span class="post-fecha">24 de Agosto de 2020</span> por <span class="post-autor"><a href="#">Sebastián Fernandez</a></span></p>
+                <p class="post-contenido text-justify">
+                    Tanto es el exito de AMONG US y Fall Guys juegos indies con un dificil inicio, pero ahora en
+                    pandemia han tenido un explosivo ingreso de usuarios, incluso muchos han comprado estos juego por ejemplo en Steam o la Store de PSN que sus ingresos se han visto sorpresivamente por las nubes. Ven con nosotros a descubrir por qué ocurre esto y descubrir que está ocurriendo con los video juegos de grandes estudios que ultimamente se han ganado el hate de la comunidad.
+                </p>
+
+                <div class="contenedor-botones">
+                    <a href="#" class="btn btn-primary">Leer Más</a>
+                    <a href="#" class="btn btn-success"> Comentarios <span class="badge">46</span></a>
+                </div>
+            </article>	
+
+            <!--aqui va el ARTICULO 3  -->
+
+            <article class="post clearfix">
+                <a href="#" class="thumb pull-left">
+                    <img class="img-thumbnail" src="{% static 'app/img\img 3.jpg' %}" alt="">
+                </a>
+                <h2 class="post-tittle">
+                    <a href="#">¿Podrá seguir el ritmo en la eterna lucha AMD vs Intel vs NVIDIA?</a>
+                </h2>
+                <p><span class="post-fecha">20 de Enero de 2020</span> por <span class="post-autor"><a href="#">El care e' Puta</a></span></p>
+                <p class="post-contenido text-justify">
+                    Todo son alabanzas hacia AMD, una empresa mucho más pequeña que Intel y NVIDIA y que sin embargo les está poniendo las cosas difíciles a ambas en casi todos los segmentos del mercado. Pero si analizamos la situación, hay un cúmulo de adversidades que tiene que solventar Lisa Su para mantener el nivel.
+                </p>
+
+                <div class="contenedor-botones">
+                    <a href="#" class="btn btn-primary">Leer Más</a>
+                    <a href="#" class="btn btn-success"> Comentarios <span class="badge">85</span></a>
+                </div>
+            </article>	
+
+            <nav>
+                <div class="center-block">
+                    <ul class="pagination">
+                        <li class="disable"><a href="#">&laquo; <span class="sr-only">Anterior</span></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>		
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo; <span class="sr-only">Siguiente</span></a></li>
+                    </ul>
+                </div>
+            </nav>	
+        </section>
+
+
+
+        <aside class="col-md-3 hidden-xs hidden-sm">
+            <h4>Categorias</h4>
+            <div class="list-group">
+                <a href="#" class="list-group-item active">Noticias</a>
+                <a href="#" class="list-group-item">Hardware</a>
+                <a href="#" class="list-group-item">Contacto</a>
+                <a href="#" class="list-group-item">Ubicacion</a>
+                <a href="#" class="list-group-item">Redes Sociales</a>
+            </div>
+
+            <h4>Articulos Recientes</h4>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Aprendiendo HTML5</h4>
+                <p class="list-group-item-text">Aprende como crear una pagina web con nuestra ayuda</p>
+            </a>
+
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Trucos HTML5</h4>
+                <p class="list-group-item-text">Conoce los mejores trucos para tu pagina</p>
+            </a>
+
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Experiencias HTML5</h4>
+                <p class="list-group-item-text">Beneficios de saber HTML5 y las experiencias de nuestros clientes</p>
+            </a>
+
+            
+
+        
+        </aside>
+    </div> 
+
+</section>
+
+{% endblock %}
