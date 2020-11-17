@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang ="es">
 <head>
@@ -9,10 +7,9 @@
     <title>Blog de Seba y Lucho</title>  
     {% load static %}
     <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
-	<link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
-	{% block estilo %}
-
-    {% endblock%}
+    <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/estilos_2.css' %}">
+    
 	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;900&display=swap" rel="stylesheet">
 	
 </head>
@@ -37,10 +34,11 @@
 				<li><a href="{% url 'home' %}">Inicio</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropw-toggle" data-toggle="dropdown" role="button">
-						Tienda <span class="caret"></span>
+						Hardware <span class="caret"></span>
 					</a>	
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="{% url 'galeria' %}">General</a></li>
+						<li><a href="#">PC</a></li>
+						<li class="divider"></li>
 						<li><a href="#">Notebook</a></li>
 						<li><a href="#">Accesorios</a></li>
 						<li><a href="#">Su cariño</a></li>
@@ -102,12 +100,31 @@
 		</div>
 
     </section>
-    
-    {% block contenido%}
 
-    {% endblock%}
+    <div id="contenido">
+		{% load humanize %}
+            <h2>Productos</h2>
+                <div class="productos">
+					{% for p in productos %}
+                    <div class="producto">
 
-    
+                        <div class="contenedor_producto">
+							{% if p.imagen %}
+							<img src="{{ p.imagen.url}}" alt="imagen producto">
+							{% endif %}
+                            <div class="detalle">
+                                <h5>{{p.marca | capfirst}}</h5>
+                                <h2>{{p.nombre | title}}</h2>
+                                <h3>${{p.precio | intcomma}}</h3>
+                            </div>
+
+                        </div>
+
+                    </div>
+					{% endfor %}
+                </div>
+        </div>
+
 	<footer>
 
 		<!--aqui va el CAROUSEL -->	

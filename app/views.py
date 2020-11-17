@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from .models import Producto
+from .forms import ProductoForm 
 
 # Create your views here.
 
@@ -11,7 +13,28 @@ def home(request):
 def terminos(request):
     return render(request, 'app/terminos.html')
 
+def galeria(request):
+    productos = Producto.objects.all()
+    data = {
+        'productos': productos
+    }
+    return render(request, 'app/galeria.html',data)
 
+def agregar_producto(request):
+
+    data = {
+        'form': ProductoForm()
+    }
+
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "guardado correctamente"
+        else:
+                data["form"] = formulario
+
+    return render(request, 'producto/agregar.html', data)
 
 def registro(request):
     data = {
@@ -28,3 +51,11 @@ def registro(request):
         data["form"] = formulario  
 
     return render(request, 'registration/registro.html', data)
+
+def listar_productos(request):
+    productos = Producto.objects.all()
+
+    data = {
+        'productos': productos
+    }
+    return render(request, 'producto/listar.html', data)

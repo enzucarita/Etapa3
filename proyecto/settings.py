@@ -34,15 +34,20 @@ LOGOUT_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_interface',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',
-    'crispy_forms'
+    'app.apps.AppConfig',
+    'colorfield',
+    'django.contrib.humanize',
+    'crispy_forms',
 ]
+
+X_FRAME_OPTION='SAMEORIGIN'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -126,3 +131,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
