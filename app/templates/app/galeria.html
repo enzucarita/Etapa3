@@ -34,10 +34,10 @@
 				<li><a href="{% url 'home' %}">Inicio</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropw-toggle" data-toggle="dropdown" role="button">
-						Hardware <span class="caret"></span>
+						Tienda <span class="caret"></span>
 					</a>	
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">PC</a></li>
+						<li><a href="#">General</a></li>
 						<li class="divider"></li>
 						<li><a href="#">Notebook</a></li>
 						<li><a href="#">Accesorios</a></li>
@@ -47,6 +47,12 @@
 				<li><a href="#">Contacto</a></li>
 				<li><a href="#">Ubicación</a></li>
 				<li><a href="#">Nosotros</a></li>
+				{% if perms.app.add_producto %}
+				<li><a href="{% url 'agregar_producto' %}">Agregar P.</a></li>
+				{% endif %}
+				{% if perms.app.view_producto %}
+				<li><a href="{% url 'listar_productos' %}">Listar P.</a></li>
+				{% endif %}
 				
 				
 				</ul>

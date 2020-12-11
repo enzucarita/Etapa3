@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from .models import Producto
 from .forms import ProductoForm 
+from django.contrib.auth.decorators import login_required, permission_required
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -20,6 +22,7 @@ def galeria(request):
     }
     return render(request, 'app/galeria.html',data)
 
+@permission_required('app.add_producto')
 def agregar_producto(request):
 
     data = {
@@ -52,6 +55,7 @@ def registro(request):
 
     return render(request, 'registration/registro.html', data)
 
+@permission_required('app.view_producto')
 def listar_productos(request):
     productos = Producto.objects.all()
 
@@ -60,6 +64,7 @@ def listar_productos(request):
     }
     return render(request, 'producto/listar.html', data)
 
+@permission_required('app.change_producto')
 def modificar_producto(request, id):
 
     producto = get_object_or_404(Producto, id=id)
@@ -77,8 +82,12 @@ def modificar_producto(request, id):
 
     return render(request, 'producto/modificar.html', data)
 
+@permission_required('app.delete_producto')
 def eliminar_producto(request, id):
     producto = get_object_or_404(Producto, id=id)
     producto.delete()
     return redirect(to="listar_productos")
     
+def ubicacion(request):
+    return render(request, 'app/ubicacion.html')  
+

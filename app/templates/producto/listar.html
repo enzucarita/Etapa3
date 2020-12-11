@@ -30,8 +30,14 @@
                     {% endif%}
                 </td>
                 <td>
+                    {% if perms.appchange_producto %}
                     <a href="{% url 'modificar_producto' p.id  %}" class="btn btn-info btn-sm">Modificar</a>
+                    {% endif%}
+
+                    {% if perms.app.delete_producto %}    
                     <a href="{% url 'eliminar_producto' p.id %}" class="btn btn-danger btn-sm">Eliminar</a>  
+                    {% endif%}
+                    
                 </td>
             </tr>
         

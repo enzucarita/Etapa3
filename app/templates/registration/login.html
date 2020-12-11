@@ -49,6 +49,12 @@
 				<li><a href="#">Contacto</a></li>
 				<li><a href="#">Ubicación</a></li>
 				<li><a href="#">Nosotros</a></li>
+				{% if perms.app.add_producto %}
+				<li><a href="{% url 'agregar_producto' %}">Agregar P.</a></li>
+				{% endif %}
+				{% if perms.app.view_producto %}
+				<li><a href="{% url 'listar_productos' %}">Listar P.</a></li>
+				{% endif %}
 				</ul>
 				<ul class="nav navbar-nav navbar-right ">
 					{% if user.is_authenticated %}
