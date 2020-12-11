@@ -1,0 +1,12 @@
+Admin RF
+Acceso exclusivo 
+Agregar producto 
+Crear	
+leer
+actualizar
+eliminar 
+
+Publi
+Cambiar
+Ver
+Eliminar
