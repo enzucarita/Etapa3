@@ -91,3 +91,6 @@ def eliminar_producto(request, id):
 def ubicacion(request):
     return render(request, 'app/ubicacion.html')  
 
+def hello(request):
+    return HttpResponse('hello')
+
